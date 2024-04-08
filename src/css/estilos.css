@@ -1,0 +1,270 @@
+html {
+    color: #fff;
+    /*tudo que esta no html fica com essa cor*/
+    scroll-behavior: smooth;
+    /*faz a rolagem mais suave*/
+}
+
+body {
+    /*background-color: #282828;*/
+    /*fundo cinza, bom colocar um backgroud para saber onde ta mexendo*/
+    font-family: "Poppins", sans-serif;
+    /*muda a fonte do html, sans serif é o que vai caregar se não conseguir puxar a fonte*/
+    margin: 0 auto;
+    /*margin da para ter 4 valores (cima, direita, baixo, esquerda (sentido horario)), 0 cima e baixo, automatico esquera e direita, precisa do max-width*/
+    max-width: 1120px;
+    background: linear-gradient(150deg, #000000, #9e00ff);
+    background-size: 120% 120%;
+
+}
+
+.cabecalho {
+    /* background-color: blue; */
+    display: flex;
+    /*flex coloca um do lado do outro, funciona como um pai/container-filhos, se coloca no pai mexe em todos os filhos. colocamos no header ele afetou a ancora e o nav. por padrão vem flex-direction: row, coloca em linha os elementos*/
+    justify-content: space-between;
+    /*entre os elementos, joga uma para cada lado*/
+    align-items: center;
+    /*centraliza verticalmente*/
+    padding: 30px 15px;
+    /*distancia*/
+}
+
+
+.cabecalho .logo {
+    /*vai estilizar so o logo que ta sentro do cabeçalho*/
+    /* background-color: orange; */
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    /*Mexe nas bordas*/
+    border: 2px solid #fff;
+    /*faz uma borda solida*/
+    text-decoration: underline;
+    text-align: center;
+    /*melhor que o flex para textos*/
+    line-height: 55px;
+    /*altura da linha para achar o centro*/
+    font-family: "Raleway", sans-serif;
+    transition: 0.2s;
+}
+
+.cabecalho a:hover .logo {
+    /*houver (subclasse)->Quando passar o mouse em cima vai mudar a cor*/
+    color: #9443d8;
+    border: 2px solid #9443d8;
+}
+
+/* .cabecalho .menu ul{
+    background-color: red;
+} */
+
+.cabecalho .menu li a {
+    font-size: 20px;
+    text-transform: capitalize;
+    /*deixa a primeira letra das palavras maiusculas*/
+    padding: 10px 20px;
+    transition: 0.2s;
+}
+
+.cabecalho .menu li a:hover {
+    background-color: #9443d8;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.home {
+    /* background-color: green; */
+    display: flex;
+    min-height: calc(100vh - 125px);
+    /*tamanho para so aparecer essa sessão, vh -> 100%altura da janela 125px tamanho do header, inspecionar para saber*/
+    align-items: center;
+    gap: 50px;
+    /*Separação entre os elementos fixos*/
+    justify-content: space-between;
+}
+
+.home .informacoes {
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    /*direcionou em colunas*/
+    gap: 15px;
+    letter-spacing: 2px;
+    /*espaço entre as letras*/
+    padding: 0 15px;
+    max-width: 50%;
+    /*quantos % do espaço que ocupa*/
+}
+
+.home .informacoes h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+    /*margem inferior*/
+}
+
+.home .informacoes p {
+    font-family: "Raleway", sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.home .redes-sociais {
+    /* background-color: orange; */
+    display: flex;
+    gap: 20px;
+}
+
+.home .redes-sociais a i {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    font-size: 26px;
+    transition: 0.3s;
+}
+
+.home .redes-sociais a i:hover {
+    color: #9443d8;
+    border: 1px solid #9443d8;
+    transform: scale(1.1);
+}
+
+.home .container-foto .foto {
+    /* background-color: red; */
+    max-width: 450px;
+    border-radius: 50%;
+}
+
+.home .container-foto img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.home .foto.sombra-interna {
+    /*sem espaço que as das classes estão juntas, com espaço ia entender que esta dentro*/
+    background: linear-gradient(to right, #8A35C8, #18C063, #00EEA2);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite; /*para animar a foto*/
+}
+
+.projetos {
+    /* background-color: purple; */
+    padding: 70px 0 70px;
+}
+
+.projetos .titulo {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 45px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.projetos .container-projetos {
+    /* background-color: yellow; */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    /*wrap faz com que caiba quando projetos der no tamanho da janela*/
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.projetos .projeto {
+    max-width: 260px;
+    max-height: 500px;
+    position: relative;
+    /*posicionamento relativo pai, usa com o position: absolute*/
+    display: none;
+    /*esconde os projetos*/
+}
+
+.projetos .projeto.ativo {
+    display: block;
+    /*faz aparecer so quem é projeto ativo*/
+}
+
+.projetos .projeto img {
+    height: 100%;
+    /*usa toda a altura sempre*/
+}
+
+.projetos .projeto h3 {
+    background-color: #040203;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: absolute;
+    /*posicinamento absoluto no filho, fica por cima da div pai (efeito de quando passar o mouse em cima aparecer o titulo), da para mexer nele mais facil*/
+    bottom: 0;
+    /*deixa o titulo colado em baixo, usa com o position absolute*/
+}
+
+.projetos .projeto .informacoes-projeto {
+    background-color: #040203;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /*ocupa todo o espaço do pai*/
+    height: 100%;
+    font-weight: 600;
+    opacity: 0;
+    /*fica transparente*/
+    transition: 0.3s;
+    padding: 20px;
+}
+
+.projetos .container-projetos .projeto:hover .informacoes-projeto {
+    opacity: 0.7;
+    /*de 0 a 1*/
+    background-color: #000;
+}
+
+.projetos .btn-mostrar-projetos {
+    background: none;
+    /*tira o fundo*/
+    border: 1px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    width: 180px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /*muda o mouse para a mãozinha*/
+}
+
+.projetos .btn-mostrar-projetos:hover {
+    background-color: #9443d8;
+    transition: 0.3s;
+}
+
+.projetos .btn-mostrar-projetos.remover {
+    /*tirar o botão quando clica*/
+    display: none;
+}
+
+@keyframes gradient-animation {
+
+    /*animação da foto*/
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

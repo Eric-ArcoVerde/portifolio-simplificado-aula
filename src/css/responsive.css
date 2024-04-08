@@ -1,0 +1,42 @@
+@media(max-width :1280px) { /*Quando ta menor que esse tamanho de largura que aplica as regras da responsividade, dentro dos parenteses que vai ter os seletores*/
+
+    .cabecalho {
+        padding: 30px;
+    }
+
+    .home {
+        /*background-color: red;*/
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 0;
+        gap: 30;
+    }
+
+    .home .informacoes {
+        max-width: 100%; /*ocupa toda a largura da tela (do celular)*/
+        text-align: center;
+        align-items: center;
+    }
+
+    .projetos .container-projetos {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 425px){
+    .home .informacoes h1 {
+        font-size: 30px;
+    }
+    
+    .home .informacoes p {
+        font-size: 16px; /*texto no celular é melhor menor*/
+    }
+
+    .home .container-foto img{
+        max-width: 320px; /*largura maxima da foto, dificil ter tela menor que 320px*/
+    }
+
+    .projetos {
+        padding: 30px;
+    }
+}
